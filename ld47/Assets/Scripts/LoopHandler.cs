@@ -6,40 +6,56 @@ using UnityEngine;
 public class LoopHandler : MonoBehaviour
 {
 
+    // public memebers
     public Transform startPos;
     
     public GameObject player;
     public GameObject playerDummyPrefab;
+    public int minReplayTimespan = 5;
     
-    private float lastTime = 0;
+     public int ReplayCount 
+    { 
+        get {
+            return replayStack.Count;
+        }
+    }
+
+    public float LastTime
+    {
+        get;
+        private set;
+    }
+
+    // private memebers
     private List<Replay> replayStack;
     private List<Vector3> currentPositions;
     private int replayIndex = 0;
+   
 
-
-
-    // Start is called before the first frame update
     private void Start() 
     {
         currentPositions = new List<Vector3>();
         replayStack = new List<Replay>();
     }
-
-    // Update is called once per frame
+    private void Reset()
+    {
+        player.transform.position = startPos.position;
+        LastTime = Time.time;
+        var replay = new Replay(this);
+        replay.positions = currentPositions;
+        replayStack.Add(replay);
+        currentPositions = new List<Vector3>();
+        replayIndex = 0;
+    }
+    
     private void Update()
     {
         if(Input.GetKeyDown("space")) {
             // put player to start
-            if(Time.time - lastTime < 5)
+            if(Time.time - LastTime < (ReplayCount + 1) * minReplayTimespan)
                 return;
             
-            player.transform.position = startPos.position;
-            lastTime = Time.time;
-            var replay = new Replay(this);
-            replay.positions = currentPositions;
-            replayStack.Add(replay);
-            currentPositions = new List<Vector3>();
-            replayIndex = 0;
+            Reset();
         }
     }
 
