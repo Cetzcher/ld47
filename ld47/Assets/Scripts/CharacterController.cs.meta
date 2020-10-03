@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:ld47/Assets/Scripts/CharacterController.cs.meta
+guid: cbce286a903a2b549b9a0a8cfb9a8cd2
+=======
 guid: b6ccc490cec714ab28fede5cb8e58d31
+>>>>>>> cba62f8cbd221fecb9103608a3065892271a3983:ld47/Assets/Scripts/CharacterController2D.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

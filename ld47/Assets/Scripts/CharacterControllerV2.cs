@@ -13,6 +13,7 @@ public class CharacterControllerV2 : MonoBehaviour
     // private members
     private Rigidbody2D rb; 
     private Vector2 input;
+    private Animator animator;
 
 
     // public memebers
@@ -34,7 +35,17 @@ public class CharacterControllerV2 : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         yAxis = new AxisHelper("Vertical");
+        animator = GetComponent<Animator>();
+    }
 
+    private IEnumerator TurnToBlock()
+    {
+        while(animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+        {
+            yield return null;
+        }
+        LoopHandler.Instance.Reset();
+        rb.velocity = Vector3.zero;
     }
 
     private void HandleInput() 
@@ -43,6 +54,15 @@ public class CharacterControllerV2 : MonoBehaviour
         var x = Input.GetAxis("Horizontal");
         var y = yAxis.Value;
         input = new Vector2(x, y);
+        if( Input.GetKeyDown("space")) 
+        {
+            if(LoopHandler.Instance.CanReset)
+            {
+                animator.SetBool("blockify", true);
+                StartCoroutine(TurnToBlock());
+            }
+        }
+
     }
 
     private void Raycheck()
