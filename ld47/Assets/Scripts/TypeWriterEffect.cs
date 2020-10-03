@@ -11,7 +11,7 @@ public class TypeWriterEffect : MonoBehaviour {
     public BlinkingCursor blinkingCursor;
 
 	// Use this for initialization
-	void Start () {
+	public void init () {
 		StartCoroutine(ShowText());
 	}
 	
