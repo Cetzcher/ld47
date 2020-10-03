@@ -29,16 +29,19 @@ public class CharacterControllerV2 : MonoBehaviour
     public float groundMovementMult = 2f;
     public float minDoubleJumpLag = 0.250f;    // 250 ms
 
+    private AxisHelper yAxis;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+        yAxis = new AxisHelper("Vertical");
+
     }
 
     private void HandleInput() 
     {
+        yAxis.UpdateAxis();
         var x = Input.GetAxis("Horizontal");
-        var y = Input.GetAxis("Vertical");
+        var y = yAxis.Value;
         input = new Vector2(x, y);
     }
 
@@ -117,7 +120,7 @@ public class CharacterControllerV2 : MonoBehaviour
         walkEndEvent.Invoke();
         // jump only IF has not double jumped yet, the input y is positive and the time since the jump is 
         // greate than the lag
-        if(!hasDoubleJumped && input.y > 0.2f && Time.time - lastJumpTime > minDoubleJumpLag) 
+        if(!hasDoubleJumped && yAxis.IsDown && Time.time - lastJumpTime > minDoubleJumpLag) 
         {  
             rb.velocity = new Vector2(rb.velocity.x, 0f);   // reset y movement
             Jump(jumpImpulse);
