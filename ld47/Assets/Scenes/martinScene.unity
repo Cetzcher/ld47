@@ -729,6 +729,8 @@ MonoBehaviour:
   playerDummyPrefab: {fileID: 3650034600882764317, guid: 32ff4c15f0c2d0045b38da27622dfdf6,
     type: 3}
   minReplayTimespan: 5
+  sampleFrequency: 20
+  blockPrefab: {fileID: 0}
 --- !u!4 &587001534
 Transform:
   m_ObjectHideFlags: 0
@@ -1751,6 +1753,7 @@ GameObject:
   - component: {fileID: 1868182365}
   - component: {fileID: 1868182364}
   - component: {fileID: 1868182366}
+  - component: {fileID: 1868182367}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1887,6 +1890,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 0.1
   fullText: Dicke titten Kartofellsatlat Pierre ist ein Hurensohn
+  currentText: 
+  blinkingCursor: {fileID: 1868182367}
+--- !u!114 &1868182367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868182362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d20709c01696115d5a7eea7e5770a86c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorChar: 
 --- !u!1001 &1606263184343002069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1963,7 +1981,7 @@ PrefabInstance:
     - target: {fileID: 1606263184088303845, guid: 68b9eee1870a62d45bdf1542705a174c,
         type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1606263184088303846, guid: 68b9eee1870a62d45bdf1542705a174c,
         type: 3}
