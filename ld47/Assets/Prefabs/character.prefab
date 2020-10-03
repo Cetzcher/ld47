@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1606263184088303846}
   - component: {fileID: 1606263184088303840}
   - component: {fileID: 1606263184088303847}
+  - component: {fileID: 1747056389098443535}
   m_Layer: 0
   m_Name: character
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1606263184088303866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.55, y: 5.35, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 1606263184142557012}
   - {fileID: 1606263184889351269}
@@ -77,7 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b1d94cf865e8a46feb1f07d55193f41f, type: 3}
+  m_Sprite: {fileID: 4527991461530604629, guid: b1d94cf865e8a46feb1f07d55193f41f,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -229,6 +231,25 @@ MonoBehaviour:
   jumpAudio: {fileID: 8300000, guid: a1414ee729008c54089013cc09c09be6, type: 3}
   doubleJump: {fileID: 8300000, guid: 4d0e39a84d3d6c349ae0068a6f73a389, type: 3}
   walking: {fileID: 8300000, guid: 1f42331523a7d7443aa1ba799ddd2bf3, type: 3}
+--- !u!95 &1747056389098443535
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606263184088303866}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cf62666b72a8c8141aff6b3eee84901a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1606263184142557098
 GameObject:
   m_ObjectHideFlags: 0

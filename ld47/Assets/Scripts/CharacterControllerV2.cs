@@ -43,6 +43,11 @@ public class CharacterControllerV2 : MonoBehaviour
         var x = Input.GetAxis("Horizontal");
         var y = yAxis.Value;
         input = new Vector2(x, y);
+        if(LoopHandler.Instance.CanReset && Input.GetKeyDown("space"))
+        {
+            LoopHandler.Instance.Reset();
+        }
+
     }
 
     private void Raycheck()

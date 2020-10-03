@@ -728,6 +728,9 @@ MonoBehaviour:
   playerDummyPrefab: {fileID: 3650034600882764317, guid: 32ff4c15f0c2d0045b38da27622dfdf6,
     type: 3}
   minReplayTimespan: 5
+  sampleFrequency: 2
+  blockPrefab: {fileID: 7115602831902306110, guid: 852bc4fb8979b0e4c957bf5ffcd453c9,
+    type: 3}
 --- !u!4 &587001534
 Transform:
   m_ObjectHideFlags: 0
@@ -1425,7 +1428,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 9091493b17c824b439ea843e78380e84, type: 3}
+  m_Texture: {fileID: 2800000, guid: 236e49e24ebaef54ab087881a8ed1d29, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1705,6 +1708,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: character
+      objectReference: {fileID: 0}
+    - target: {fileID: 1606263184768124582, guid: 68b9eee1870a62d45bdf1542705a174c,
+        type: 3}
+      propertyPath: orthographic size
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68b9eee1870a62d45bdf1542705a174c, type: 3}
