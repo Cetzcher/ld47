@@ -12,14 +12,8 @@ TextureImporter:
       213: 7566427109838179226
     second: Character-Sprite_2
   - first:
-      213: -6255440620325019550
-    second: Character-Sprite_0
-  - first:
-      213: -4605206252973012411
-    second: Character-Sprite_1
-  - first:
-      213: 4628133645162652533
-    second: Character-Sprite_2
+      0: 0
+    second: 
   - first:
       213: 5251991356552530739
     second: Character-Sprite_3
@@ -52,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -78,14 +72,14 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,7 +91,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,7 +115,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -121,7 +127,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -146,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2606af706e53039a0800000000000000
-      internalID: -6255440620325019550
+      spriteID: 55498827e38a6de30800000000000000
+      internalID: 4527991461530604629
       vertices: []
       indices: 
       edges: []
@@ -167,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54ac226ff450710c0800000000000000
-      internalID: -4605206252973012411
+      spriteID: d5c4415917aa61870800000000000000
+      internalID: 8653291138848148573
       vertices: []
       indices: 
       edges: []
@@ -188,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57324f4870f6a3040800000000000000
-      internalID: 4628133645162652533
+      spriteID: a9b4ac42e59510960800000000000000
+      internalID: 7566427109838179226
       vertices: []
       indices: 
       edges: []
@@ -218,7 +224,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 9efa19c2f39fcc04aa081830338bb20a
+    spriteID: a970468ef4ae11e46b8144abf9a50ca5
     internalID: 0
     vertices: []
     indices: 
