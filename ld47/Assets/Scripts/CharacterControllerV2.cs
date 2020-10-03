@@ -1,12 +1,19 @@
 using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 
 public class CharacterControllerV2 : MonoBehaviour 
 {
 
+    public UnityEvent walkStartEvent = new UnityEvent();
+    public UnityEvent walkEndEvent = new UnityEvent();
+    public UnityEvent jumpEvent = new UnityEvent();
+    public UnityEvent doubleJumpEvent = new UnityEvent();
+
     // private members
     private Rigidbody2D rb; 
     private Vector2 input;
+
 
     // public memebers
     // Ground check stuff
@@ -14,7 +21,6 @@ public class CharacterControllerV2 : MonoBehaviour
     public bool grounded = false;
     public bool hasDoubleJumped = false;
     public int groundChekcCount = 4;
-    public float skin = 0.1f;   // how far away the rays start
     public float groundTolerance = 0.1f;
     
     // movement stuff
@@ -22,7 +28,6 @@ public class CharacterControllerV2 : MonoBehaviour
     public float jumpImpulse = 10f;
     public float groundMovementMult = 2f;
     public float minDoubleJumpLag = 0.250f;    // 250 ms
-    public Vector2 maximumSpeed = new Vector2(30, 30);
 
     private void Awake()
     {
@@ -91,14 +96,25 @@ public class CharacterControllerV2 : MonoBehaviour
         if(input.y > 0.2f) 
         {
             Jump(jumpImpulse);
+            jumpEvent.Invoke();
         }
 
         var move = new Vector2(input.x * groundMovementMult, 0);
+        if(Mathf.Abs(move.x) > 0f)
+        {
+            walkStartEvent.Invoke();
+        }
+        else
+        {
+            walkEndEvent.Invoke();
+        }
         rb.AddForce(move);
     }
 
     private void AirMovement() 
     {
+        // going airborne stops the walk since we are now 'gliding'
+        walkEndEvent.Invoke();
         // jump only IF has not double jumped yet, the input y is positive and the time since the jump is 
         // greate than the lag
         if(!hasDoubleJumped && input.y > 0.2f && Time.time - lastJumpTime > minDoubleJumpLag) 
@@ -106,6 +122,7 @@ public class CharacterControllerV2 : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, 0f);   // reset y movement
             Jump(jumpImpulse);
             hasDoubleJumped = true;
+            doubleJumpEvent.Invoke();
         }
         var move = new Vector2(input.x * airMovementMult, 0);
         rb.AddForce(move);
