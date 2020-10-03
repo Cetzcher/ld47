@@ -68,9 +68,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.5
+    - _ScaleRatioB: 0.40625
+    - _ScaleRatioC: 0.40625
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -156,9 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: BACKTO1982 SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 396304611
   material: {fileID: -7519898283551841638}
-  materialHashCode: 0
+  materialHashCode: 360813155
   m_Version: 1.1.0
   m_SourceFontFileGUID: 750093f3f4cf7d64a8794a81fcef2f8a
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 750093f3f4cf7d64a8794a81fcef2f8a,
@@ -170,7 +170,7 @@ MonoBehaviour:
     m_StyleName: Regular
     m_PointSize: 55
     m_Scale: 1
-    m_LineHeight: 54.89
+    m_LineHeight: 80
     m_AscentLine: 44.33
     m_CapLine: 46
     m_MeanLine: 46

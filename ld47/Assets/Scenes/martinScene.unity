@@ -1760,6 +1760,53 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 135110709}
     m_Modifications:
+    - target: {fileID: 8857816194893381144, guid: bbe7f7283293099488323db70fcd636a,
+        type: 3}
+      propertyPath: fullText
+      value: Dicke Titten KartofelSalat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857816194893381146, guid: bbe7f7283293099488323db70fcd636a,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ae08c1c7b0a2c464bbc1c7b29ac874d6,
+        type: 2}
+    - target: {fileID: 8857816194893381146, guid: bbe7f7283293099488323db70fcd636a,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7519898283551841638, guid: ae08c1c7b0a2c464bbc1c7b29ac874d6,
+        type: 2}
+    - target: {fileID: 8857816194893381146, guid: bbe7f7283293099488323db70fcd636a,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857816194893381146, guid: bbe7f7283293099488323db70fcd636a,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857816194893381146, guid: bbe7f7283293099488323db70fcd636a,
+        type: 3}
+      propertyPath: m_lineSpacing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857816194893381146, guid: bbe7f7283293099488323db70fcd636a,
+        type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857816194893381146, guid: bbe7f7283293099488323db70fcd636a,
+        type: 3}
+      propertyPath: m_overrideHtmlColors
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8857816194893381149, guid: bbe7f7283293099488323db70fcd636a,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 8857816195128487816, guid: bbe7f7283293099488323db70fcd636a,
         type: 3}
       propertyPath: m_LocalPosition.x
