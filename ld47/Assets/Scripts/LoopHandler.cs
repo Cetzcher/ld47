@@ -12,7 +12,7 @@ public class LoopHandler : MonoBehaviour
     
     public GameObject player;
     public GameObject playerDummyPrefab;
-    public int minReplayTimespan = 5;
+    public int minReplayTimespan = 1;
     
      public int ReplayCount 
     { 
