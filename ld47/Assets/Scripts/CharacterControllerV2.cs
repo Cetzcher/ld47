@@ -40,10 +40,11 @@ public class CharacterControllerV2 : MonoBehaviour
 
     private IEnumerator TurnToBlock()
     {
-        while(animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
+        /*while(animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1)
         {
             yield return null;
-        }
+        }*/
+        yield return null;
         LoopHandler.Instance.Reset();
         rb.velocity = Vector3.zero;
     }
@@ -58,7 +59,7 @@ public class CharacterControllerV2 : MonoBehaviour
         {
             if(LoopHandler.Instance.CanReset)
             {
-                animator.SetBool("blockify", true);
+                //animator.SetBool("blockify", true);
                 StartCoroutine(TurnToBlock());
             }
         }
