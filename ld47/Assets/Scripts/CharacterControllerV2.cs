@@ -19,6 +19,7 @@ public class CharacterControllerV2 : MonoBehaviour
     // public memebers
     // Ground check stuff
     public float lastJumpTime = 0f;
+    private float lastSingleJumpTime = 0f;
     public bool grounded = false;
     public bool hasDoubleJumped = false;
     public int groundChekcCount = 4;
@@ -71,9 +72,9 @@ public class CharacterControllerV2 : MonoBehaviour
         var x = transform.position.x;
         var y = transform.position.y;
         // get lowes point
-        y -= transform.localScale.y / 1.8f  + 0.1f;
-        var startX = x - transform.localScale.x / 3.5f;
-        var endX = x + transform.localScale.x / 3.5f;
+        y -= transform.localScale.y / 2f  - 0.25f;
+        var startX = x - transform.localScale.x / 7f;
+        var endX = x + transform.localScale.x / 7f;
         grounded = false;
 
         for(int i = 0; i < groundChekcCount + 1; i++)
@@ -119,10 +120,14 @@ public class CharacterControllerV2 : MonoBehaviour
     private void GorundedMovement() 
     {
         var xMove = input.x * groundMovementMult;
-        if(input.y > 0.2f) 
+        if(input.y > 0.01f) 
         {
-            Jump(jumpImpulse);
-            jumpEvent.Invoke();
+            if(Time.time - lastSingleJumpTime > 0.1f)
+            {
+                Jump(jumpImpulse);
+                lastSingleJumpTime = Time.time;
+                jumpEvent.Invoke();
+            }
         }
 
         var move = new Vector2(input.x * groundMovementMult, 0);

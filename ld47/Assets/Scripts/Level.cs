@@ -14,12 +14,14 @@ public class Level : MonoBehaviour
 
     public void StartLevel()
     {
-        camera.transform.position = cameraPosition.position;
         LoopHandler.Instance.startPos = spawn;
+        return;
+        camera.transform.position = cameraPosition.position;
     }
-
+/*
     private IEnumerator LevelTransition(Level to)
     {
+        return;
         Vector3 dist;
         do
         {
@@ -32,14 +34,15 @@ public class Level : MonoBehaviour
         } while(dist.magnitude > 0.1f);
         nextLevel.StartLevel();
         LoopHandler.Instance.ClearStack();
-    }
+    }*/
     // Update is called once per frame
     public void Exit()
     {
+        return;
         Debug.Log("level Exit");
         if(nextLevel != null)
         {
-            StartCoroutine(LevelTransition(nextLevel));
+            //StartCoroutine(LevelTransition(nextLevel));
         }
     }
 }

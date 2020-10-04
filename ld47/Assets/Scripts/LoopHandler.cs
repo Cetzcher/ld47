@@ -132,7 +132,12 @@ public class LoopHandler : MonoBehaviour
                 // create a block that can be used.
                 if(replay.spwanedBlock == null)
                 {
-                    replay.spwanedBlock = Instantiate(blockPrefab, replay.positions.Last(), Quaternion.identity);
+                    Vector3 last = Vector3.zero;
+                    if(replay.positions.Count > 0)
+                    {
+                        last = replay.positions[replay.positions.Count - 1];
+                    }
+                    replay.spwanedBlock = Instantiate(blockPrefab, last, Quaternion.identity);
                 }
 
             }
