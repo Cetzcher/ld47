@@ -8,6 +8,7 @@ public class LoopHandler : MonoBehaviour
 
     // public memebers
     public Transform startPos;
+    public Level firstLevel;
     
     public GameObject player;
     public GameObject playerDummyPrefab;
@@ -40,14 +41,37 @@ public class LoopHandler : MonoBehaviour
 
     private int sampleCount = 0;
 
-    private void Start() 
+    public void ResetFull()
     {
-        currentPositions = new List<Vector3>();
+        Reset();
+        ClearStack();
+   }
+
+    private List<IDynamic> registeredDyns;
+    public void RegisterDynamic(IDynamic dyn)
+    {
+        registeredDyns.Add(dyn);
+    }
+
+   
+
+    public void ClearStack()
+    {
+        replayIndex = 0;
+        foreach (var r in replayStack)
+        {
+            r.Dummy = null;
+            if(r.spwanedBlock)
+                Destroy(r.spwanedBlock);
+        }
         replayStack = new List<Replay>();
     }
     public void Reset()
     {
+        foreach(var dyn in registeredDyns)
+            dyn.Reset();
         player.transform.position = startPos.position;
+        player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         LastTime = Time.time;
         var replay = new Replay(this);
         replay.positions = currentPositions;
@@ -65,6 +89,10 @@ public class LoopHandler : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        firstLevel.StartLevel();
+        currentPositions = new List<Vector3>();
+        replayStack = new List<Replay>();
+        registeredDyns = new List<IDynamic>();
     }
 
 

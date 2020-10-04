@@ -71,9 +71,9 @@ public class CharacterControllerV2 : MonoBehaviour
         var x = transform.position.x;
         var y = transform.position.y;
         // get lowes point
-        y -= transform.localScale.y / 2f  + 0.1f;
-        var startX = x - transform.localScale.x / 2f;
-        var endX = x + transform.localScale.x / 2f;
+        y -= transform.localScale.y / 1.8f  + 0.1f;
+        var startX = x - transform.localScale.x / 3.5f;
+        var endX = x + transform.localScale.x / 3.5f;
         grounded = false;
 
         for(int i = 0; i < groundChekcCount + 1; i++)
@@ -86,6 +86,8 @@ public class CharacterControllerV2 : MonoBehaviour
             var res = Physics2D.Raycast(pos, dir, groundTolerance);
             if(res.collider != null) 
             {
+                if(res.collider.isTrigger)
+                    continue;
                 grounded = true;
                 hasDoubleJumped = false;
             }
